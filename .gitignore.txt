@@ -1,0 +1,59 @@
+# =========================
+# Backend (Spring Boot/Java/Maven)
+# =========================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE specific files
+.classpath
+.project
+.settings/
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+.vscode/
+
+# Logs and OS files
+*.log
+logs/
+.DS_Store
+
+# =========================
+# Frontend (React/Node)
+# =========================
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+/frontend/coverage/
+
+# Production Build
+/build
+/dist
+/frontend/build/
+/frontend/dist/
+
+# Misc and Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+		"name": "Library Management System",
+		"description": "Complete API collection for the Library Management System covering Users, Books, Borrow, Waiting List, and Notifications endpoints, with integrated test scripts.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"phone\": \"1234567890\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": ["{{baseUrl}}"],
+							"path": ["users"]
+						}
+					}
+				},
+				{
+					"name": "Create User 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Jane Smith\",\n    \"email\": \"jane@example.com\",\n    \"phone\": \"0987654321\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": ["{{baseUrl}}"],
+							"path": ["users"]
+						}
+					}
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": ["{{baseUrl}}"],
+							"path": ["users"]
+						}
+					}
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["users", "1"]
+						}
+					}
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Updated\",\n    \"email\": \"john.updated@example.com\",\n    \"phone\": \"1112223333\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["users", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/2",
+							"host": ["{{baseUrl}}"],
+							"path": ["users", "2"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Create Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Clean Code\",\n    \"author\": \"Robert C. Martin\",\n    \"isbn\": \"978-0132350884\",\n    \"totalCopies\": 1,\n    \"availableCopies\": 1\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books",
+							"host": ["{{baseUrl}}"],
+							"path": ["books"]
+						}
+					}
+				},
+				{
+					"name": "Create Book 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Design Patterns\",\n    \"author\": \"Gang of Four\",\n    \"isbn\": \"978-0201633610\",\n    \"totalCopies\": 2,\n    \"availableCopies\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books",
+							"host": ["{{baseUrl}}"],
+							"path": ["books"]
+						}
+					}
+				},
+				{
+					"name": "Get All Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/books",
+							"host": ["{{baseUrl}}"],
+							"path": ["books"]
+						}
+					}
+				},
+				{
+					"name": "Search Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/books?search=Clean",
+							"host": ["{{baseUrl}}"],
+							"path": ["books"],
+							"query": [
+								{
+									"key": "search",
+									"value": "Clean"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Book by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/books/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["books", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get Available Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/books/available",
+							"host": ["{{baseUrl}}"],
+							"path": ["books", "available"]
+						}
+					}
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Clean Code - Updated Edition\",\n    \"author\": \"Robert C. Martin\",\n    \"isbn\": \"978-0132350884\",\n    \"totalCopies\": 5,\n    \"availableCopies\": 5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["books", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/books/2",
+							"host": ["{{baseUrl}}"],
+							"path": ["books", "2"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Borrow",
+			"item": [
+				{
+					"name": "Borrow Book (User 1, Book 1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Borrow status is BORROWED\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status).to.eql(\"BORROWED\");",
+									"    pm.expect(jsonData.bookId).to.not.be.null;",
+									"    pm.expect(jsonData.userId).to.not.be.null;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/borrow/1/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["borrow", "1", "1"]
+						}
+					}
+				},
+				{
+					"name": "Return Book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Borrow status is RETURNED\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status).to.eql(\"RETURNED\");",
+									"    pm.expect(jsonData.returnDate).to.not.be.null;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/borrow/return/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["borrow", "return", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get User Borrow Records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/borrow/user/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["borrow", "user", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Waiting List",
+			"item": [
+				{
+					"name": "Join Waiting List (User 2, Book 1)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/waitlist/join/2/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["waitlist", "join", "2", "1"]
+						}
+					}
+				},
+				{
+					"name": "Claim Book (Entry 1)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response body indicates successful claim\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"claimed\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/waitlist/claim/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["waitlist", "claim", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get Waiting List for Book 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/waitlist/book/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["waitlist", "book", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "Get User Notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/notifications/2",
+							"host": ["{{baseUrl}}"],
+							"path": ["notifications", "2"]
+						}
+					}
+				},
+				{
+					"name": "Mark Notification as Read",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/notifications/1/read",
+							"host": ["{{baseUrl}}"],
+							"path": ["notifications", "1", "read"]
+						}
+					}
+				}
+			]
+		}
+	]
+}
