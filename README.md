@@ -72,10 +72,3 @@ library-management-system/
 └── README.md
 ```
 
-## Scheduled Background Jobs
-- **Waiting List Expiry** – runs every hour, checks if a reserved book's 24-hour claim window has expired, and moves the reservation to the next user in queue.
-- **Due Date Reminders** – runs daily, marks overdue borrows and sends reminders for books due soon.
-
-## Fine Rules
-- ₹5 per day late
-- Borrowing period: 14 days
